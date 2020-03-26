@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>3D-modelling // Meshkov R.A. // 171-331</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.11/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-food-component/dist/aframe-food-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+</head>
+<body>
+<a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+    <!--Ground-->
+    <a-plane position="0 0 -4" material="src: ./img/sand.jpg; width: 600;" rotation="-90 0 0" width="15" height="15" geometry=""></a-plane>
+    <!--Particles-->
+    <a-entity position="0.02 0.5 -2" particle-system="preset: snow; rotationAngle: 10; velocityValue: 0 2 0; velocitySpread: 0 0.7 0; randomize: true; maxParticleCount: 2500"></a-entity>
+    <!--Camera-->
+    <a-entity camera="fov: 90" position="0 1 0" wasd-controls="" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+    <!--Audio bg-->
+    <a-sound src="./sounds/background_theme.mp3" sound="autoplay: true; loop: true"></a-sound>
+
+    <a-sky color="#ECECEC" material="src: ./img/skybox_water.jpg; width: 1000;" geometry=""></a-sky>
+    <a-light position="-4.29552 3.6919 -9.13841" light="color: #ff87df; intensity: 0.5; type: hemisphere"></a-light>
+
+    <!--Wall-->
+    <a-entity geometry="" material="src: ./img/wall1.jpg; width:1000" position="0.023 0.5 -2.7218"></a-entity>
+    <a-entity geometry="" material="src: ./img/wall1.jpg; width: 1000" position="1.02088 0.5 -2.7218"></a-entity>
+    <a-entity geometry="" material="src: ./img/wall1.jpg; width: 1000" position="1.02059 0.5 -3.72485"></a-entity>
+    <a-entity geometry="" material="src: ./img/wall1.jpg; width: 1000" position="0.01941 0.5 -3.72343"></a-entity>
+    <a-entity geometry="primitive: cylinder" scale="0.5 1.4 0.5" position="1.009 1.694 -2.719" material="src: ./img/wall1.jpg; width: 50;"></a-entity>
+    <!--Window-->
+    <a-entity geometry="" position="1.009 1.761 -2.236" material="src: ./img/wood.jpg; width: 200" scale="0.25 0.05 0.25" rotation="90 0 0"></a-entity>
+    <!--Roof-->
+    <a-entity position="1.011 2.7656 -2.702" geometry="primitive: cone" material="src: ./img/roof.jpg; width: 1000" scale="0.9 0.9 0.9"></a-entity>
+    <!--Door-->
+    <a-entity geometry="" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0"></a-entity>
+    <!--Airoplan-->
+    <a-entity geometry="primitive: sphere" scale="2.5 1 1" material="color: #ffae8d" animation="easing: linear; from: 5 5 5; property: position; to: 0 0.5 0; dur: 40000" position="3.8086325000000216 3.9277692500000194 3.8086325000000216"></a-entity>
+
+    <!--Stones-->
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 90 0" position="3.284 -0.186 -7.42936"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 90 0" position="2.49595 -0.25784 -5.36201"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: dodecahedron" position="3.52 0.126 -6.06" ></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: dodecahedron" position="2.23901 0.25697 -8.15284" ></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 90 0" position="-0.31753 -0.25784 -6.69315" scale="1.2 1 1"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 75 0" position="0.91524 -0.28137 -5.36201" scale="1 2 1"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 78 0" position="0.37966 -0.25784 -7.8863" scale="1 1 1.2"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: dodecahedron" position="1.58364 0.25697 -8.75526" scale="2 5 1" rotation="-5 0 0"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: dodecahedron" position="1.58364 1.12102 -9.55571" scale="5 6 1" rotation="-5 5 50"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 75 0" position="-2.35017 0.01095 -9.13241" scale="4 3 2"></a-entity>
+    <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 100 0" position="5.37265 0.25971 -8.68221" scale="5 3 3"></a-entity>
+
+    <!--Water-->
+    <a-ocean color="aqua" depth="100" width="100" ocean="depth: 3.3; width: 2.5; speedVariance: 1" position="1.72357 0.29964 -7.18755" scale="1.2 1 1"></a-ocean>
+    <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4" position="1.44523 2.5076 -8.10598" scale="1.2 1 1" rotation="0 0 0"></a-ocean>
+    <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4; density: 15" position="1.44523 5.6426 -10.36371" scale="1.2 1 1" rotation="-70 0 0"></a-ocean>
+
+    <!--Food-->
+    <a-entity food="" src="./img/water.webp" scale="0.5 0.5 0.5" position="2.026 -0.03772 -4.38214" rotation="1 0 0"><a-cylinder radius="0.18" height="0.01" src="./img/water.webp" position="0 0.15 0" geometry="" material=""></a-cylinder><a-obj-model src="https://unpkg.com/aframe-food-component/bowl.obj" mtl="https://unpkg.com/aframe-food-component/bowl.mtl" scale="0.0062 0.0062 0.0062" obj-model="" material=""></a-obj-model></a-entity>
+    <!--Gif-->
+    <a-entity geometry="primitive: plane" material="shader: gif; src: url(./img/ricardo.gif)" gif="" rotation="0 -90 0" scale="0.75 0.75 0.75" position="-0.483 0.476 -3.25674"></a-entity>
+
+
+</a-scene>
+</body>
+</html>
