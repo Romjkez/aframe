@@ -7,11 +7,14 @@
     <script src="https://unpkg.com/aframe-food-component/dist/aframe-food-component.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
     <script src="https://rawgit.com/mayognaise/aframe-gif-component/master/dist/aframe-gif-component.min.js"></script>
+    <!-- Components -->
+    <script src="./components/mirror.js"></script>
 </head>
 <body>
+
 <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
     <!--Ground-->
-    <a-plane position="0 0 -4" material="src: ./img/sand.jpg; width: 600;" rotation="-90 0 0" width="15" height="15" geometry=""></a-plane>
+    <a-plane position="0 0 -4" material="src: ./img/sand.jpg; width: 600;" rotation="-90 0 0" width="16" height="16" geometry=""></a-plane>
     <!--Particles-->
     <a-entity position="0.02 0.5 -2" particle-system="preset: snow; rotationAngle: 10; velocityValue: 0 2 0; velocitySpread: 0 0.7 0; randomize: true; maxParticleCount: 2500"></a-entity>
     <!--Camera-->
@@ -60,6 +63,11 @@
     <!--Gif-->
     <a-entity geometry="primitive: plane" material="shader: gif; src: url(./img/ricardo.gif)" gif="" rotation="0 -90 0" scale="0.75 0.75 0.75" position="-0.483 0.476 -3.25674"></a-entity>
 
+    <!-- Custom components -->
+    <a-entity>
+        <a-sphere position="-3.45477 1.37827 -3.31913" mirror="resolution: 32; distance: 2000; interval: 300; repeat: true" material="" geometry="" scale="0.7 0.7 0.7"></a-sphere>
+    </a-entity>
+    <a-entity geometry="primitive: cone" material="" scale="1 2 1" position="-3.436 -0.167 -3.344"></a-entity>
 
 </a-scene>
 </body>
