@@ -37,8 +37,11 @@
     <a-entity position="1.011 2.7656 -2.702" geometry="primitive: cone" material="src: ./img/roof.jpg; width: 1000" scale="0.9 0.9 0.9"></a-entity>
     <!--Door-->
     <a-entity geometry="" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0"></a-entity>
-    <!--Airoplan-->
-    <a-entity geometry="primitive: sphere" scale="2.5 1 1" material="color: #ffae8d" animation="easing: linear; from: 5 5 5; property: position; to: 0 0.5 0; dur: 40000" position="3.8086325000000216 3.9277692500000194 3.8086325000000216"></a-entity>
+    <!--Airship-->
+    <a-entity>
+        <a-entity geometry="primitive: sphere" scale="3 1 1" material="color: #fff; emissive: #919191" animation="easing: linear; from: 5 5 5; property: position; to: 0 1.2 0; dur: 30000" ></a-entity>
+        <a-entity geometry="" material="color: #fff; emissive: #919191" scale="1 0.7 0.7"  animation="easing: linear; from: 5 4 4.9 ; property: position; to: 0 .2 0; dur: 30000"></a-entity>
+    </a-entity>
 
     <!--Stones-->
     <a-entity material="src: ./img/stone.jpg; width: 1000" geometry="primitive: icosahedron" rotation="90 90 0" position="3.284 -0.186 -7.42936"></a-entity>
@@ -67,7 +70,7 @@
     <a-entity>
         <a-sphere position="-3.45477 1.37827 -3.31913" mirror="resolution: 32; distance: 2000; interval: 300; repeat: true" material="" geometry="" scale="0.7 0.7 0.7"></a-sphere>
     </a-entity>
-    <a-entity geometry="primitive: cone" material="" scale="1 2 1" position="-3.436 -0.167 -3.344"></a-entity>
+    <a-entity geometry="primitive: cone" material="" scale=".5 2 .5" position="-3.436 -0.257 -3.344" rotation="0 0 180"></a-entity>
 
 </a-scene>
 </body>
