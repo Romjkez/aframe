@@ -80,6 +80,11 @@
     <a-entity geometry="" position="-0.79906 0.95988 -3.2269" material="emissive: #fff; emissiveIntensity: 1.1" scale="0.02 0.05 0.02" rotation=""></a-entity>
     <a-light position="-0.79848 0.93297 -3.2269" light="color: #fff; intensity: 0.5; type: spot; distance: 1.5; decay: 0.5" rotation="-30 270 0"></a-light>
 
+    <!--General light from corner lamp-->
+    <a-entity geometry="primitive: cylinder" position="7.18136 0.92171 3.32361" material="src: ./img/wood.webp; width: 100" scale="0.1 2 0.1"></a-entity>
+    <a-entity geometry="" position="7.10732 1.90068 3.24186" material="emissive: #fff; emissiveIntensity: 1.1" scale="1 0.05 1" rotation="87.19 90 45"></a-entity>
+    <a-light position="7.18136 1.76069 3.32361" light="color: #fff; intensity: 0.5; shadowRadius: 2;" rotation="" visible=""></a-light>
+
     <!-- Custom components -->
     <a-entity>
         <a-sphere position="-3.45477 1.37827 -3.31913" mirror="resolution: 32; distance: 2000; interval: 300; repeat: true" material="" geometry="" scale="0.7 0.7 0.7"></a-sphere>
