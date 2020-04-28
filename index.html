@@ -18,9 +18,10 @@
     <!--Particles-->
     <a-entity position="0.02 0.5 -2" particle-system="preset: snow; rotationAngle: 10; velocityValue: 0 2 0; velocitySpread: 0 0.7 0; randomize: true; maxParticleCount: 2500"></a-entity>
     <!--Camera-->
-    <a-entity camera="fov: 90" position="0 1 0" wasd-controls="" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+    <a-entity camera="fov: 90" position="0.21313 1.86487 0.13465" wasd-controls="acceleration: 300; fly: true" rotation="-2.63560585760179 -9.625690958197831 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
     <!--Audio bg-->
-    <a-sound src="./sounds/background_theme.mp3" sound="autoplay: true; loop: true"></a-sound>
+    <a-sound src="./sounds/background_theme.mp3" sound="autoplay: true; loop: true" position="0.679 0.292 -2.412"></a-sound>
+    <a-sound src="./sounds/waterfall.wav" sound="autoplay: true; loop: true" position="1.685 1.093 -7.869"></a-sound>
 
     <a-sky color="#ECECEC" material="src: ./img/skybox_water.jpg; width: 1000;" geometry=""></a-sky>
     <a-light position="-4.29552 3.6919 -9.13841" light="color: #ff87df; intensity: 0.5; type: hemisphere"></a-light>
@@ -39,7 +40,7 @@
     <a-entity geometry="" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0"></a-entity>
     <!--Airship-->
     <a-entity>
-        <a-entity geometry="primitive: sphere" scale="3 1 1" material="color: #fff; emissive: #919191" animation="easing: linear; from: 5 5 5; property: position; to: 0 1.2 0; dur: 30000" ></a-entity>
+        <a-entity geometry="primitive: sphere" scale="3 1 1" material="color: #fff; emissive: #919191" animation="easing: linear; from: 5 5 5; property: position; to: 0 1.2 0; dur: 30000"></a-entity>
         <a-entity geometry="" material="color: #fff; emissive: #919191" scale="1 0.7 0.7"  animation="easing: linear; from: 5 4 4.9 ; property: position; to: 0 .2 0; dur: 30000"></a-entity>
     </a-entity>
 
