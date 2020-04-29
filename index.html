@@ -2,6 +2,7 @@
 <head>
     <title>3D-modelling // Meshkov R.A. // 171-331</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^5.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.11/dist/aframe-particle-system-component.min.js"></script>
     <script src="https://unpkg.com/aframe-food-component/dist/aframe-food-component.min.js"></script>
@@ -18,7 +19,9 @@
     <!--Particles-->
     <a-entity position="0.02 0.5 -2" particle-system="preset: snow; rotationAngle: 10; velocityValue: 0 2 0; velocitySpread: 0 0.7 0; randomize: true; maxParticleCount: 2500"></a-entity>
     <!--Camera-->
-    <a-entity camera="fov: 90" position="0.21313 1.86487 0.13465" wasd-controls="acceleration: 300; fly: true" rotation="-2.63560585760179 -9.625690958197831 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+    <a-entity camera="fov: 90" position="0.21313 1.86487 0.13465" wasd-controls="acceleration: 300; fly: true" rotation="-2.63560585760179 -9.625690958197831 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="">
+        <a-cursor></a-cursor>
+    </a-entity>
     <!--Audio bg-->
     <a-sound src="./sounds/background_theme.mp3" sound="autoplay: true; loop: true" position="0.679 0.292 -2.412"></a-sound>
     <a-sound src="./sounds/waterfall.wav" sound="autoplay: true; loop: true; volume: .5" position="1.685 1.093 -7.869"></a-sound>
@@ -36,9 +39,18 @@
     <!--Window-->
     <a-entity geometry="" position="1.009 1.761 -2.236" material="src: ./img/wood.jpg; width: 200" scale="0.25 0.05 0.25" rotation="90 0 0"></a-entity>
     <!--Roof-->
-    <a-entity position="1.011 2.7656 -2.702" geometry="primitive: cone" material="src: ./img/roof.jpg; width: 1000" scale="0.9 0.9 0.9"></a-entity>
+    <a-entity position="1.011 2.7656 -2.702" geometry="primitive: cone" material="src: ./img/roof.jpg; width: 1000" scale="0.9 0.9 0.9">
+        <a-animation attribute="rotation"
+                     dur="3000"
+                     fill="forwards"
+                     from="0 90 0"
+                     to="0 0 0"
+                     direction="alternate"
+                     begin="click"></a-animation>
+    </a-entity>
     <!--Door-->
-    <a-entity geometry="" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0"></a-entity>
+    <a-entity id="door" geometry="primitive: box" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0">
+    </a-entity>
     <!--Airship-->
     <a-entity>
         <a-entity geometry="primitive: sphere" scale="3 1 1" material="color: #fff; shader: flat; src: ./img/stripes.jpg" animation="easing: linear; from: 5 5 5; property: position; to: 0 1.2 0; dur: 30000"></a-entity>
@@ -68,7 +80,9 @@
     <!--Food-->
     <a-entity food="" src="./img/water.webp" scale="0.5 0.5 0.5" position="2.026 -0.03772 -4.38214" rotation="1 0 0"><a-cylinder radius="0.18" height="0.01" src="./img/water.webp" position="0 0.15 0" geometry="" material=""></a-cylinder><a-obj-model src="https://unpkg.com/aframe-food-component/bowl.obj" mtl="https://unpkg.com/aframe-food-component/bowl.mtl" scale="0.0062 0.0062 0.0062" obj-model="" material=""></a-obj-model></a-entity>
     <!--Gif-->
-    <a-entity geometry="primitive: plane" material="shader: gif; src: url(./img/ricardo.gif)" gif="" rotation="0 -90 0" scale="0.75 0.75 0.75" position="-0.483 0.476 -3.25674"></a-entity>
+    <a-entity geometry="primitive: plane" material="shader: gif; src: url(./img/ricardo.gif)" gif="" rotation="0 -90 0" scale="0.75 0.75 0.75" position="-0.483 0.476 -3.25674"
+              event-set__enter="_event: mouseenter; _target: #gifLight; light.intensity: 1"
+              event-set__leave="_event: mouseleave; _target: #gifLight; light.intensity: 0"></a-entity>
 
     <!--Light near plate-->
     <a-entity geometry="primitive: cylinder" position="2.65877 0.42507 -4.28415" material="src: ./img/wood.webp; width: 100" scale="0.02 1 0.02"></a-entity>
@@ -78,7 +92,7 @@
     <!--Light for gif-->
     <a-entity geometry="" position="-0.30233 0.95988 -3.2269" material="src: ./img/wood.webp; width: 100" scale="0.02 1 0.02" rotation="90 90 0"></a-entity>
     <a-entity geometry="" position="-0.79906 0.95988 -3.2269" material="emissive: #fff; emissiveIntensity: 1.1" scale="0.02 0.05 0.02" rotation=""></a-entity>
-    <a-light position="-0.79848 0.93297 -3.2269" light="color: #fff; intensity: 0.5; type: spot; distance: 1.5; decay: 0.5" rotation="-30 270 0"></a-light>
+    <a-light id="gifLight" position="-0.79848 0.93297 -3.2269" light="color: #fff; intensity: 0; type: spot; distance: 1.5; decay: 0.5" rotation="-30 270 0"></a-light>
 
     <!--General light from corner lamp-->
     <a-entity geometry="primitive: cylinder" position="7.18136 0.92171 3.32361" material="src: ./img/wood.webp; width: 100" scale="0.1 2 0.1"></a-entity>
@@ -87,10 +101,10 @@
 
     <!-- Custom components -->
     <a-entity>
-        <a-sphere position="-3.45477 1.37827 -3.31913" mirror="resolution: 32; distance: 2000; interval: 300; repeat: true" material="" geometry="" scale="0.7 0.7 0.7"></a-sphere>
+        <a-sphere id="mirror" position="-3.45477 1.37827 -3.31913" mirror="resolution: 32; distance: 2000; interval: 300; repeat: true" material="" geometry="" scale="0.7 0.7 0.7"
+                  event-set__click="_event: click; scale: 1.5 1.5 1.5"></a-sphere>
+        <a-entity id="pillar" geometry="primitive: cone" material="" scale=".5 2 .5" position="-3.436 -0.257 -3.344" rotation="0 0 180"></a-entity>
     </a-entity>
-    <a-entity geometry="primitive: cone" material="" scale=".5 2 .5" position="-3.436 -0.257 -3.344" rotation="0 0 180"></a-entity>
-
 </a-scene>
 </body>
 </html>
