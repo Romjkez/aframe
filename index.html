@@ -97,6 +97,12 @@
     <a-entity geometry="" position="7.10732 1.90068 3.24186" material="emissive: #fff; emissiveIntensity: 1.1" scale="1 0.05 1" rotation="87.19 90 45"></a-entity>
     <a-light position="7.18136 1.76069 3.32361" light="color: #fff; intensity: 0.5; shadowRadius: 2;" rotation="" visible=""></a-light>
 
+    <!--Speaker-->
+    <a-entity id="speaker" geometry="" scale="0.5 0.5 0.5" rotation="0 45 0" material="color: #000000" position="4.743 0.25191 -3.45976" sound="src: ./sounds/VicetoneNevada.mp3; loop: true; volume: 0; autoplay: true"></a-entity>
+    <a-entity material="color: #333" geometry="primitive: cylinder" rotation="90 -45 0" scale="0.2 0.2 0.2" position="4.6215 0.26877 -3.33448"
+              event-set__enter="_event: mouseenter; _target: #speaker; sound.volume: .3"
+              event-set__leave="_event: mouseleave; _target: #speaker; sound.volume: 0"></a-entity>
+
     <!-- Custom components -->
     <a-entity>
         <a-sphere id="mirror" position="-3.45477 1.37827 -3.31913" mirror="resolution: 32; distance: 2000; interval: 300; repeat: true" material="" geometry="" scale="0.7 0.7 0.7"
