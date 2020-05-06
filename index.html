@@ -24,7 +24,6 @@
     </a-entity>
     <!--Audio bg-->
     <a-sound src="./sounds/background_theme.mp3" sound="autoplay: true; loop: true" position="0.679 0.292 -2.412"></a-sound>
-    <a-sound src="./sounds/waterfall.wav" sound="autoplay: true; loop: true; volume: .5" position="1.685 1.093 -7.869"></a-sound>
 
     <a-sky color="#ECECEC" material="src: ./img/skybox_water.jpg; width: 1000;" geometry=""></a-sky>
     <!--Light-->
@@ -49,8 +48,7 @@
                      begin="click"></a-animation>
     </a-entity>
     <!--Door-->
-    <a-entity id="door" geometry="primitive: box" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0">
-    </a-entity>
+    <a-entity id="door" geometry="primitive: box" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0"></a-entity>
     <!--Airship-->
     <a-entity>
         <a-entity geometry="primitive: sphere" scale="3 1 1" material="color: #fff; shader: flat; src: ./img/stripes.jpg" animation="easing: linear; from: 5 5 5; property: position; to: 0 1.2 0; dur: 30000"></a-entity>
@@ -74,7 +72,7 @@
 
     <!--Water-->
     <a-ocean color="aqua" depth="100" width="100" ocean="depth: 3.3; width: 2.5; speedVariance: 1" position="1.72357 0.29964 -7.18755" scale="1.2 1 1"></a-ocean>
-    <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4" position="1.44523 2.5076 -8.10598" scale="1.2 1 1" rotation="0 0 0"></a-ocean>
+    <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4" position="1.44523 2.5076 -8.10598" scale="1.2 1 1" rotation="0 0 0" sound="src: ./sounds/waterfall.wav; autoplay: true; loop: true; volume: .5"></a-ocean>
     <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4; density: 15" position="1.44523 5.6426 -10.36371" scale="1.2 1 1" rotation="-70 0 0"></a-ocean>
 
     <!--Food-->
