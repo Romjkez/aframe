@@ -14,6 +14,9 @@
 <body>
 
 <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+    <a-assets>
+        <a-asset-item id="helicopter" src="./models/helicopter/model.gltf"></a-asset-item>
+    </a-assets>
     <!--Ground-->
     <a-plane position="0 0 -4" material="src: ./img/sand.jpg; width: 600;" rotation="-90 0 0" width="16" height="16" geometry=""></a-plane>
     <!--Particles-->
@@ -38,15 +41,7 @@
     <!--Window-->
     <a-entity geometry="" position="1.009 1.761 -2.236" material="src: ./img/wood.jpg; width: 200" scale="0.25 0.05 0.25" rotation="90 0 0"></a-entity>
     <!--Roof-->
-    <a-entity position="1.011 2.7656 -2.702" geometry="primitive: cone" material="src: ./img/roof.jpg; width: 1000" scale="0.9 0.9 0.9">
-        <a-animation attribute="rotation"
-                     dur="3000"
-                     fill="forwards"
-                     from="0 90 0"
-                     to="0 0 0"
-                     direction="alternate"
-                     begin="click"></a-animation>
-    </a-entity>
+    <a-entity position="1.011 2.7656 -2.702" geometry="primitive: cone" material="src: ./img/roof.jpg; width: 1000" scale="0.9 0.9 0.9"></a-entity>
     <!--Door-->
     <a-entity id="door" geometry="primitive: box" scale="0.05 0.75 0.4" material="src: ./img/wood.jpg; width: 1000" position="0.00139 0.33262 -2.24447" rotation="0 90 0"></a-entity>
     <!--Airship-->
@@ -102,6 +97,10 @@
     <a-entity material="color: #333" geometry="primitive: cylinder" rotation="90 -45 0" scale="0.2 0.2 0.2" position="4.6215 0.26877 -3.33448"
               event-set__enter="_event: mouseenter; _target: #speaker; sound.volume: .3"
               event-set__leave="_event: mouseleave; _target: #speaker; sound.volume: 0"></a-entity>
+
+    <a-gltf-model src="#helicopter" position="0.788 10.976 5.405" scale="0.3 0.3 0.3" rotation="0 -9.164349612670371 0"
+                  animation="property: rotation; to: 0 90 0; loop: true; dur: 11000; ease: linear; dir: alternate;"
+                  animation__2="property: position; from: 0.788 9.976 5.405; to: 0.788 10.976 -13.473; loop: true; dur: 11000; dir: alternate; ease: easeInOutElastic"></a-gltf-model>
 
     <!-- Custom components -->
     <a-entity>
