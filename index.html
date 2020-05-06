@@ -26,7 +26,7 @@
         <a-cursor></a-cursor>
     </a-entity>
     <!--Audio bg-->
-    <a-sound src="./sounds/background_theme.mp3" sound="autoplay: true; loop: true" position="0.679 0.292 -2.412"></a-sound>
+    <a-sound id="bgMusic" src="./sounds/background_theme.mp3" sound="autoplay: true; loop: true" position="0.679 0.292 -2.412"></a-sound>
 
     <a-sky color="#ECECEC" material="src: ./img/skybox_water.jpg; width: 1000;" geometry=""></a-sky>
     <!--Light-->
@@ -67,7 +67,8 @@
 
     <!--Water-->
     <a-ocean color="aqua" depth="100" width="100" ocean="depth: 3.3; width: 2.5; speedVariance: 1" position="1.72357 0.29964 -7.18755" scale="1.2 1 1"></a-ocean>
-    <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4" position="1.44523 2.5076 -8.10598" scale="1.2 1 1" rotation="0 0 0" sound="src: ./sounds/waterfall.wav; autoplay: true; loop: true; volume: .5"></a-ocean>
+    <a-ocean id="waterfall" color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4" position="1.44523 2.5076 -8.10598" scale="1.2 1 1" rotation="0 0 0" sound="src: ./sounds/waterfall.wav; autoplay: true; loop: true; volume: .5"
+             event-set__click="_event: click; target: #waterfall; sound.loop: false"></a-ocean>
     <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4; density: 15" position="1.44523 5.6426 -10.36371" scale="1.2 1 1" rotation="-70 0 0"></a-ocean>
 
     <!--Food-->
