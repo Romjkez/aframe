@@ -68,7 +68,7 @@
     <!--Water-->
     <a-ocean color="aqua" depth="100" width="100" ocean="depth: 3.3; width: 2.5; speedVariance: 1" position="1.72357 0.29964 -7.18755" scale="1.2 1 1"></a-ocean>
     <a-ocean id="waterfall" color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4" position="1.44523 2.5076 -8.10598" scale="1.2 1 1" rotation="0 0 0" sound="src: ./sounds/waterfall.wav; autoplay: true; loop: true; volume: .5"
-             event-set__click="_event: click; target: #waterfall; sound.loop: false"></a-ocean>
+             event-set__click="_event: click; target: #waterfall; sound.loop: false; maxDistance: 500"></a-ocean>
     <a-ocean color="aqua" depth="100" width="100" ocean="depth: 5; width: 1; speedVariance: 1; speed: 4; density: 15" position="1.44523 5.6426 -10.36371" scale="1.2 1 1" rotation="-70 0 0"></a-ocean>
 
     <!--Food-->
@@ -94,7 +94,7 @@
     <a-light position="7.18136 1.76069 3.32361" light="color: #fff; intensity: 0.5; shadowRadius: 2;" rotation="" visible=""></a-light>
 
     <!--Speaker-->
-    <a-entity id="speaker" geometry="" scale="0.5 0.5 0.5" rotation="0 45 0" material="color: #000000" position="4.743 0.25191 -3.45976" sound="src: ./sounds/VicetoneNevada.mp3; loop: true; volume: 0; autoplay: true"></a-entity>
+    <a-entity id="speaker" geometry="" scale="0.5 0.5 0.5" rotation="0 45 0" material="color: #000000" position="4.743 0.25191 -3.45976" sound="src: ./sounds/VicetoneNevada.mp3; loop: true; volume: 0; autoplay: true; maxDistance: 100"></a-entity>
     <a-entity material="color: #333" geometry="primitive: cylinder" rotation="90 -45 0" scale="0.2 0.2 0.2" position="4.6215 0.26877 -3.33448"
               event-set__enter="_event: mouseenter; _target: #speaker; sound.volume: .3"
               event-set__leave="_event: mouseleave; _target: #speaker; sound.volume: 0"></a-entity>
